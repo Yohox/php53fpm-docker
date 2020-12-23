@@ -24,6 +24,7 @@ RUN cd /opt/php-5.3.29 \
 RUN mkdir -vp /usr/local/php/lib/php/extensions/no-debug-non-zts-20090626/ && cp /opt/ZendGuardLoader-php-5.3-linux-glibc23-x86_64/php-5.3.x/ZendGuardLoader.so /usr/local/php/lib/php/extensions/no-debug-non-zts-20090626/
 RUN cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
 RUN cp /opt/php-5.3.29/php.ini-production /usr/local/php/lib/php.ini
+RUN sed -i 's/listen = 127.0.0.1:9000/listen = 0.0.0.0:9000/g' /usr/local/php/etc/php-fpm.conf
 RUN echo $'[zend.loader] \n\
 zend_loader.enable=1 \n\
 zend_extension=/usr/local/php/lib/php/extensions/no-debug-non-zts-20090626/ZendGuardLoader.so' >> /usr/local/php/lib/php.ini
