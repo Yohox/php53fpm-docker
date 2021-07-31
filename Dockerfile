@@ -17,7 +17,7 @@ RUN cd /opt/libmcrypt-2.5.8 \
     && make \
     && make install 
 RUN cd /opt/php-5.3.29 \
-    && './configure'  '--prefix=/usr/local/php' '--enable-fpm' '--with-fpm-user=fpm' '--with-fpm-group=fpm' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--with-pdo-mysql=mysqlnd' '--without-pdo-sqlite' '--without-sqlite3' '--without-sqlite' '--with-mysql-sock=/tmp/mysql.sock' '--with-curl' '--enable-mbstring' '--with-mhash' '--with-mcrypt' '--with-openssl' '--with-gd' '--enable-sockets' '--with-gettext' '--with-zlib' '--enable-zip' '--enable-soap' '--with-xmlrpc' '—enable-bcmath' \
+    && './configure'  '--prefix=/usr/local/php' '--enable-fpm' '--with-fpm-user=fpm' '--with-fpm-group=fpm' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--with-pdo-mysql=mysqlnd' '--without-pdo-sqlite' '--without-sqlite3' '--without-sqlite' '--with-mysql-sock=/tmp/mysql.sock' '--with-curl' '--enable-mbstring' '--with-mhash' '--with-mcrypt' '--with-openssl' '--with-gd' '--enable-sockets' '--with-gettext' '--with-zlib' '--enable-zip' '--enable-soap' '--with-xmlrpc' '--enable-bcmath' \
     && make clean \
     && make \
     && make install 

@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  php53:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    container_name: "php53"
+    volumes:
+      - /home/www:/home/www
+    ports:
+      - 9000:9000
+    networks:
+      - dn
+networks:
+  dn:
+    external: true
